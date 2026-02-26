@@ -4,7 +4,7 @@ Documentation of my penetration testing, vulnerability research, and security pr
 
 ## About Me
 
-Third-year cybersecurity student specializing in web application security, network penetration testing, and embedded systems security. Hands-on practitioner focused on ethical hacking and vulnerability assessment.
+Second year cybersecurity student specializing in web application security, network penetration testing, and embedded systems security. Hands-on practitioner focused on ethical hacking and vulnerability assessment.
 
 ## Current Skills
 

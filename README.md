@@ -40,7 +40,67 @@ Second year cybersecurity student specializing in web application security, netw
 - Parameterized queries prevent SQL injection
 - Output encoding prevents XSS attacks
 - Security through obscurity is not security
+### 🔴 Man-in-the-Middle Attack Analysis - Bettercap
 
+**Background:** Discovered this as an optional lab exercise at the end of my network security lab manual. Got curious and decided to explore it hands-on.
+
+**Objective:** Understand network-layer attack vectors and ARP spoofing in controlled environment
+
+**Environment:**
+- Personal test network (isolated)
+- Bettercap framework
+- Kali Linux
+- Target machines: Windows and Linux VMs
+
+**What I Did:**
+
+**1. Network Reconnaissance**
+- Identified active hosts on network
+- Mapped network topology
+- Selected target for demonstration
+
+**2. ARP Spoofing Attack**
+- Positioned myself as man-in-the-middle between target and gateway
+- Used Bettercap to poison ARP caches
+- Successfully intercepted network traffic flow
+
+**3. Traffic Analysis**
+- Captured HTTP requests and responses
+- Observed cleartext credential transmission
+- Demonstrated vulnerability of unencrypted protocols
+- Analyzed packet structure and data flow
+
+**Attack Mechanics:**
+- **Technique:** ARP cache poisoning
+- **Tool:** Bettercap
+- **Result:** Complete visibility into target's network communication
+
+**Impact & Implications:**
+- HTTP traffic completely visible
+- Credentials transmitted in cleartext can be captured
+- Users unaware of interception
+- Demonstrates critical importance of encryption
+
+**Defense Mechanisms Explored:**
+- Static ARP entries
+- ARP spoofing detection tools
+- Network segmentation
+- Mandatory HTTPS/TLS
+- VPN usage for sensitive communications
+
+**Key Learnings:**
+- Network protocols operate on trust (ARP has no authentication)
+- Encryption is essential, not optional
+- Even "secure" networks can be compromised at layer 2
+- Monitoring and detection are critical defensive layers
+- Understanding attacks is key to building better defenses
+
+**Why This Matters:**
+This attack vector is still relevant today - coffee shop WiFi, corporate networks, IoT devices all vulnerable without proper security controls.
+
+**Ethics:** All testing conducted on personal network infrastructure with full authorization. No unauthorized interception performed.
+
+---
 ---
 ## Current Skills
 

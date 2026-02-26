@@ -5,7 +5,43 @@ Documentation of my penetration testing, vulnerability research, and security pr
 ## About Me
 
 Second year cybersecurity student specializing in web application security, network penetration testing, and embedded systems security. Hands-on practitioner focused on ethical hacking and vulnerability assessment.
+## Completed Projects
 
+### 🔴 Web Application Security - OWASP Juice Shop
+
+**Objective:** Identify and exploit web vulnerabilities in controlled environment
+
+**Environment:** Docker, OWASP Juice Shop, Burp Suite, Gobuster
+
+**Vulnerabilities Exploited:**
+
+**1. SQL Injection - Authentication Bypass**
+- Intercepted login requests using Burp Suite
+- Tested SQL injection payloads
+- Successfully bypassed authentication: `' OR 1=1--`
+- Gained unauthorized admin access
+- **Impact:** Complete authentication bypass
+- **OWASP:** A03:2021 - Injection
+
+**2. Cross-Site Scripting (XSS)**
+- Identified unsanitized input fields
+- Injected payload: `<script>alert('XSS')</script>`
+- Confirmed stored XSS vulnerability
+- **Impact:** Session hijacking, credential theft potential
+- **OWASP:** A03:2021 - Injection
+
+**3. Directory Enumeration**
+- Used Gobuster for directory discovery
+- Found hidden admin panels and sensitive endpoints
+- **Impact:** Information disclosure, unauthorized access points
+
+**Key Takeaways:**
+- Input validation is critical for security
+- Parameterized queries prevent SQL injection
+- Output encoding prevents XSS attacks
+- Security through obscurity is not security
+
+---
 ## Current Skills
 
 **Penetration Testing:**

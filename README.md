@@ -4,7 +4,6 @@
 📍 Rawalpindi/Islamabad, Pakistan  
 🎓 **Actively seeking Summer 2026 Cybersecurity Internships**
 
-
 *Tools of the Trade:* ![Kali Linux](https://img.shields.io/badge/Kali_Linux-557C94?style=flat&logo=kali-linux&logoColor=white) 
 ![Burp Suite](https://img.shields.io/badge/Burp_Suite-FF6633?style=flat&logo=burpsuite&logoColor=white) 
 ![Metasploit](https://img.shields.io/badge/Metasploit-000000?style=flat&logo=metasploit&logoColor=white) 
@@ -36,13 +35,15 @@ I believe that understanding how attacks work is the foundation of building bett
 ## Projects
 
 ### 🔴 Web Application Security — OWASP Juice Shop
-**Tools:** Docker · Burp Suite · Gobuster
+**Tools:** Burp Suite (Proxy, Repeater, Decoder) · Gobuster · Docker · Chromium
 
-Performed a full vulnerability assessment against OWASP Juice Shop in an isolated Docker environment, identifying and exploiting multiple critical vulnerabilities.
+Conducted an advanced, manual vulnerability assessment against a modern Node.js/Express/Angular Single Page Application (SPA), successfully exploiting multiple OWASP Top 10 vulnerabilities.
 
-* **SQL Injection:** Intercepted login requests with Burp Suite and crafted a payload to bypass authentication entirely, gaining unauthorized admin access. Demonstrated how parameterized queries eliminate this risk.
-* **Stored XSS:** Identified unsanitized input fields and injected a persistent script payload, confirming session hijacking and credential theft potential. Remediated via output encoding and Content Security Policy.
-* **Directory Enumeration:** Used Gobuster to surface hidden admin panels and sensitive endpoints, illustrating that security through obscurity is not a valid control.
+* **[A01:2021] Broken Access Control (IDOR):** Intercepted and manipulated REST API requests in Burp Suite Repeater to bypass authorization checks and access unauthorized database objects (Cart ID manipulation).
+* **[A02:2021] Cryptographic Failures:** Identified weak data obfuscation in frontend JavaScript. Extracted and decoded Base64 strings using Burp Decoder to uncover hidden application routes.
+* **[A03:2021] Injection (SQLi):** Executed SQL injection payloads (`' OR 1=1 --`) against the authentication mechanism to successfully bypass login controls and hijack administrative access.
+* **[A04:2021] Insecure Design (Business Logic Bypass):** Intercepted outbound `POST` requests and manipulated JSON payloads in transit to bypass frontend UI validation constraints (e.g., submitting 0-star ratings).
+* **[A05:2021] Security Misconfiguration:** Utilized `gobuster` for aggressive directory enumeration to uncover exposed internal business directories (`/ftp`) and sensitive configuration documents.
 
 ### 🔴 Man-in-the-Middle Attack Analysis — Bettercap
 **Tools:** Bettercap · Kali Linux · Wireshark  
@@ -92,10 +93,11 @@ Built and assessed the security of a custom IoT-controlled RC car, evaluating th
 
 ---
 
-## 🚧 Coming Soon
+## 🚧 Infrastructure & Upcoming Research
 
 | Project | Description |
 |---|---|
+| **Air-Gapped Bare-Metal Pentest Lab** | Architecting an isolated, physical LAN using salvaged PC hardware (headless Linux hypervisor) and a dedicated physical router to practice Layer 2/3 network attacks, traffic analysis, and deploy custom Wi-Fi penetration tools. |
 | **Honeypot Deployment** | Cowrie & Dionaea implementation to monitor real-world attack patterns. |
 | **ESP32 Drone Security** | Building and auditing a custom drone over the summer to assess aerial IoT vulnerabilities and radio communication security. |
 

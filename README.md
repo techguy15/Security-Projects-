@@ -1,227 +1,113 @@
-# Security Research Portfolio
+# Hi, I'm Hashir 👋
+### Cybersecurity Student | Penetration Tester | Web & Network Security
 
-Documentation of my penetration testing, vulnerability research, and security projects.
+📍 Rawalpindi/Islamabad, Pakistan  
+🎓 **Actively seeking Summer 2026 Cybersecurity Internships**
+
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-blue.svg?logo=linkedin)](https://www.linkedin.com/in/hashir-atiq-hashmi-5a96061ab/) 
+[![GitHub](https://img.shields.io/badge/GitHub-hashiratiqhashmi-black.svg?logo=github)](https://github.com/hashiratiqhashmi)
+
+---
 
 ## About Me
 
-Second year cybersecurity student specializing in web application security, network penetration testing, and embedded systems security. Hands-on practitioner focused on ethical hacking and vulnerability assessment.
-## Completed Projects
+Second-year cybersecurity student specializing in **web application security**, **network penetration testing**, and **embedded systems security**. I am a hands-on practitioner focused on ethical hacking and vulnerability assessment with a 3.67 GPA.
 
-### 🔴 Web Application Security - OWASP Juice Shop
-
-**Objective:** Identify and exploit web vulnerabilities in controlled environment
-
-**Environment:** Docker, OWASP Juice Shop, Burp Suite, Gobuster
-
-**Vulnerabilities Exploited:**
-
-**1. SQL Injection - Authentication Bypass**
-- Intercepted login requests using Burp Suite
-- Tested SQL injection payloads
-- Successfully bypassed authentication: `' OR 1=1--`
-- Gained unauthorized admin access
-- **Impact:** Complete authentication bypass
-- **OWASP:** A03:2021 - Injection
-
-**2. Cross-Site Scripting (XSS)**
-- Identified unsanitized input fields
-- Injected payload: `<script>alert('XSS')</script>`
-- Confirmed stored XSS vulnerability
-- **Impact:** Session hijacking, credential theft potential
-- **OWASP:** A03:2021 - Injection
-
-**3. Directory Enumeration**
-- Used Gobuster for directory discovery
-- Found hidden admin panels and sensitive endpoints
-- **Impact:** Information disclosure, unauthorized access points
-
-**Key Takeaways:**
-- Input validation is critical for security
-- Parameterized queries prevent SQL injection
-- Output encoding prevents XSS attacks
-- Security through obscurity is not security
-### 🔴 Man-in-the-Middle Attack Analysis - Bettercap
-
-**Background:** Discovered this as an optional lab exercise at the end of my network security lab manual. Got curious and decided to explore it hands-on.
-
-**Objective:** Understand network-layer attack vectors and ARP spoofing in controlled environment
-
-**Environment:**
-- Personal test network (isolated)
-- Bettercap framework
-- Kali Linux
-- Target machines: Windows and Linux VMs
-
-**What I Did:**
-
-**1. Network Reconnaissance**
-- Identified active hosts on network
-- Mapped network topology
-- Selected target for demonstration
-
-**2. ARP Spoofing Attack**
-- Positioned myself as man-in-the-middle between target and gateway
-- Used Bettercap to poison ARP caches
-- Successfully intercepted network traffic flow
-
-**3. Traffic Analysis**
-- Captured HTTP requests and responses
-- Observed cleartext credential transmission
-- Demonstrated vulnerability of unencrypted protocols
-- Analyzed packet structure and data flow
-
-**Attack Mechanics:**
-- **Technique:** ARP cache poisoning
-- **Tool:** Bettercap
-- **Result:** Complete visibility into target's network communication
-
-**Impact & Implications:**
-- HTTP traffic completely visible
-- Credentials transmitted in cleartext can be captured
-- Users unaware of interception
-- Demonstrates critical importance of encryption
-
-**Defense Mechanisms Explored:**
-- Static ARP entries
-- ARP spoofing detection tools
-- Network segmentation
-- Mandatory HTTPS/TLS
-- VPN usage for sensitive communications
-
-**Key Learnings:**
-- Network protocols operate on trust (ARP has no authentication)
-- Encryption is essential, not optional
-- Even "secure" networks can be compromised at layer 2
-- Monitoring and detection are critical defensive layers
-- Understanding attacks is key to building better defenses
-
-**Why This Matters:**
-This attack vector is still relevant today - coffee shop WiFi, corporate networks, IoT devices all vulnerable without proper security controls.
-
-**Ethics:** All testing conducted on personal network infrastructure with full authorization. No unauthorized interception performed.
+I believe that understanding how attacks work is the foundation of building better defenses. All research documented here was conducted in authorized, controlled lab environments.
 
 ---
----
-## Current Skills
 
-**Penetration Testing:**
-- Web application security testing
-- Network exploitation
-- System compromise and privilege escalation
-- Wireless security assessment
+## Skills & Tools
 
-**Tools & Frameworks:**
-- Burp Suite, Metasploit Framework, Bettercap
-- Docker, Kali Linux
-- ESP32/Arduino for hardware security
-- Python and Bash scripting
+**Penetration Testing:** Web App Security, Network Exploitation, Privilege Escalation, Wireless Security  
+**Environments:** Kali Linux, Docker, OWASP Juice Shop, Metasploitable  
+**Hardware & IoT:** ESP32, Embedded Systems Security  
+
+*Tools of the Trade:* ![Burp Suite](https://img.shields.io/badge/Burp_Suite-FF6633?style=flat&logo=burpsuite&logoColor=white) ![Metasploit](https://img.shields.io/badge/Metasploit-000000?style=flat&logo=metasploit&logoColor=white) ![Nmap](https://img.shields.io/badge/Nmap-2B2D31?style=flat&logo=nmap&logoColor=white) ![Python](https://img.shields.io/badge/Python-3776AB?style=flat&logo=python&logoColor=white) ![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat&logo=docker&logoColor=white) 
 
 ---
 
 ## Projects
 
-### 🔴 SQL Injection - OWASP Juice Shop
+### 🔴 Web Application Security — OWASP Juice Shop
+**Tools:** Docker · Burp Suite · Gobuster
 
-**Environment:** Docker, OWASP Juice Shop, Burp Suite
+Performed a full vulnerability assessment against OWASP Juice Shop in an isolated Docker environment, identifying and exploiting multiple critical vulnerabilities.
 
-**What I Did:**
-1. Deployed Juice Shop application in isolated Docker environment
-2. Used Burp Suite to intercept and analyze HTTP requests
-3. Identified SQL injection vulnerability in login form
-4. Crafted payload: `' OR 1=1--` to bypass authentication
-5. Successfully gained unauthorized admin access
+* **SQL Injection:** Intercepted login requests with Burp Suite and crafted a payload to bypass authentication entirely, gaining unauthorized admin access. Demonstrated how parameterized queries eliminate this risk.
+* **Stored XSS:** Identified unsanitized input fields and injected a persistent script payload, confirming session hijacking and credential theft potential. Remediated via output encoding and Content Security Policy.
+* **Directory Enumeration:** Used Gobuster to surface hidden admin panels and sensitive endpoints, illustrating that security through obscurity is not a valid control.
 
-**Impact:** 
-- Authentication bypass
-- Unauthorized access to administrative functions
-- Potential data exposure
+### 🔴 Man-in-the-Middle Attack Analysis — Bettercap
+**Tools:** Bettercap · Kali Linux · Wireshark  
+**Environment:** Isolated personal test network (Windows + Linux VMs)
 
-**Mitigation:**
-- Use parameterized queries/prepared statements
-- Input validation and sanitization
-- Principle of least privilege
+Conducted ARP cache poisoning to position as a man-in-the-middle between target VMs and the gateway, demonstrating the full attack chain.
 
-**OWASP:** A03:2021 - Injection
+* Executed ARP spoofing with Bettercap to intercept traffic flow.
+* Captured cleartext HTTP credentials to demonstrate the risk of unencrypted protocols.
+* **Key Takeaway:** Layer 2 trust assumptions remain a relevant threat vector in corporate and IoT environments. Encryption and network monitoring are non-negotiable controls.
 
----
+### 🔴 Metasploitable 2 — Full Penetration Test
+**Tools:** Metasploit Framework · Kali Linux · VMware
 
-### 🔴 Cross-Site Scripting (XSS) - OWASP Juice Shop
+Conducted a full penetration test against Metasploitable 2, simulating a real-world black-box assessment.
 
-**Environment:** OWASP Juice Shop, Browser Developer Tools, Burp Suite
+* Performed host discovery and service enumeration to map the attack surface.
+* Gained initial foothold via remote exploits and established reverse shell sessions.
+* **Key Takeaway:** Unpatched services and default configurations are highly dangerous. Patch management and service hardening are critical first lines of defense.
 
-**What I Did:**
-1. Identified user input fields that display content without proper sanitization
-2. Tested basic XSS payload: `<script>alert('XSS')</script>`
-3. Confirmed stored XSS vulnerability
-4. Demonstrated script execution in victim's browser context
+### 🔴 Windows 7 Exploitation — EternalBlue
+**Tools:** Metasploit Framework · Kali Linux · VMware
 
-**Impact:**
-- Session token theft
-- Credential harvesting
-- Page defacement
-- Malicious redirects
+Exploited a Windows 7 VM using EternalBlue (MS17-010) in a fully isolated lab environment.
 
-**Mitigation:**
-- Output encoding/escaping
-- Content Security Policy (CSP)
-- Input validation
-- HttpOnly and Secure cookie flags
+* Scanned target and confirmed SMB vulnerability using Metasploit auxiliary modules.
+* Executed the exploit to gain remote code execution without credentials, establishing a Meterpreter reverse shell.
+* **Key Takeaway:** EternalBlue remains a critical case study in patch urgency. Legacy systems require strict network segmentation and timely patching.
 
-**OWASP:** A03:2021 - Injection
+### 🔴 ESP32 Marauder — Wireless Security Research
+**Tools:** ESP32 · ESP32 Marauder firmware · Arduino IDE
 
----
+Built a portable wireless security research tool to explore the offensive and defensive dimensions of WiFi and Bluetooth.
 
-### 🔴 Directory Enumeration
+* Performed passive WiFi scanning to capture SSIDs, BSSIDs, and channel data.
+* Demonstrated deauthentication capabilities against test networks to illustrate WiFi disruption risks.
+* **Key Takeaway:** Low-cost hardware can be a powerful wireless auditing tool. Organizations must monitor for rogue devices and utilize WPA3.
 
-**Tool Used:** Gobuster
+### 🔴 IoT RC Car — Embedded Systems Security Assessment
+**Tools:** ESP32 · L298N Motor Driver · Arduino IDE · Custom firmware
 
-**What I Did:**
-- Performed directory and file enumeration on Juice Shop
-- Discovered hidden endpoints and administrative panels
-- Identified sensitive files and directories
+Built and assessed the security of a custom IoT-controlled RC car, evaluating the attack surface in a real embedded system.
 
-**Key Learning:** 
-- Importance of proper access controls
-- Hidden doesn't mean secure
-- Regular security audits catch these issues
+* Analyzed the communication layer for potential interception or replay attack vectors.
+* Assessed firmware for hardcoded credentials and insecure configurations.
+* **Key Takeaway:** Simple embedded systems often prioritize functionality over security, exposing significant attack surfaces through unencrypted communications.
 
 ---
 
-## Coming Soon
+## 🚧 Coming Soon
 
-Working on documenting these completed projects:
-
-- **Metasploitable 2 Penetration Test** - Full assessment of vulnerable Linux system
-- **Windows 7 Exploitation** - Metasploit Framework exploitation
-- **Man-in-the-Middle Attack** - Bettercap ARP spoofing and traffic interception
-- **ESP32 Marauder** - Wireless security research and WiFi penetration testing
-- **IoT RC Car Security** - Embedded systems security assessment
-- **Honeypot Deployment** - Cowrie & Dionaea implementation
+| Project | Description |
+|---|---|
+| **Honeypot Deployment** | Cowrie & Dionaea implementation to monitor real-world attack patterns. |
+| **ESP32 Drone Security** | Building and auditing a custom drone over the summer to assess aerial IoT vulnerabilities and radio communication security. |
 
 ---
 
-## Learning Resources
+## ⚖️ Ethics & Methodology
 
-**Currently Studying:**
-- "Web Hacking 101" by Peter Yaworski
-- OWASP documentation and guidelines
-- TryHackMe and HackTheBox platforms
-- Active participation in the cybersecurity community
+All security testing documented in this portfolio was performed strictly in:
+* ✔️ Authorized laboratory environments
+* ✔️ Intentionally vulnerable applications built for learning
+* ✔️ Controlled, isolated networks I own and operate
 
----
-
-## Ethics Statement
-
-All security testing and research documented here was conducted in:
-- Authorized laboratory environments
-- Intentionally vulnerable applications designed for learning
-- Controlled networks with proper permission
-- Compliance with ethical hacking guidelines
-
-No unauthorized testing or malicious activity has been performed.
+*No unauthorized testing has been conducted.*
 
 ---
 
-**GPA:** 3.67 | **Status:** Actively seeking Summer 2026 cybersecurity internships
+## Let's Connect
+Feel free to reach out if you'd like to discuss my projects, cybersecurity trends, or Summer 2026 internship opportunities!
 
-*Portfolio last updated: [2-26-2026]*
+* **LinkedIn:** [Hashir Atiq Hashmi](https://www.linkedin.com/in/hashir-atiq-hashmi-5a96061ab/)
+* **Email:** [hashirateeq2005@gmail.com](mailto:hashirateeq2005@gmail.com)

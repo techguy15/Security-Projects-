@@ -4,9 +4,15 @@
 📍 Rawalpindi/Islamabad, Pakistan  
 🎓 **Actively seeking Summer 2026 Cybersecurity Internships**
 
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-blue.svg?logo=linkedin)](https://www.linkedin.com/in/hashir-atiq-hashmi-5a96061ab/) 
-[![GitHub](https://img.shields.io/badge/GitHub-hashiratiqhashmi-black.svg?logo=github)](https://github.com/hashiratiqhashmi)
 
+*Tools of the Trade:* ![Kali Linux](https://img.shields.io/badge/Kali_Linux-557C94?style=flat&logo=kali-linux&logoColor=white) 
+![Burp Suite](https://img.shields.io/badge/Burp_Suite-FF6633?style=flat&logo=burpsuite&logoColor=white) 
+![Metasploit](https://img.shields.io/badge/Metasploit-000000?style=flat&logo=metasploit&logoColor=white) 
+![Nmap](https://img.shields.io/badge/Nmap-2B2D31?style=flat&logo=nmap&logoColor=white) 
+![Bettercap](https://img.shields.io/badge/Bettercap-FFFFFF?style=flat&logoColor=black) 
+![Gobuster](https://img.shields.io/badge/Gobuster-FFB534?style=flat&logoColor=black) 
+![Python](https://img.shields.io/badge/Python-3776AB?style=flat&logo=python&logoColor=white) 
+![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat&logo=docker&logoColor=white)
 ---
 
 ## About Me

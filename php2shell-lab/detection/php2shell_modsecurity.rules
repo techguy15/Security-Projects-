@@ -1,0 +1,26 @@
+# php2shell_modsecurity.rules
+# ModSecurity signatures only (OWASP CRS-style syntax).
+
+SecRule REQUEST_HEADERS:Content-Type "multipart/form-data" \
+    "id:9000101,\
+    phase:2,\
+    msg:'PHP2Shell - PHP_SESSION_UPLOAD_PROGRESS field detected in multipart upload',\
+    chain,\
+    tag:'attack-rce',\
+    tag:'cve-2026-109618',\
+    severity:'WARNING',\
+    log,\
+    pass"
+    SecRule ARGS_NAMES "@streq PHP_SESSION_UPLOAD_PROGRESS" "t:none"
+
+SecRule REQUEST_HEADERS:Content-Length "@gt 1000000" \
+    "id:9000102,\
+    phase:1,\
+    msg:'PHP2Shell - Oversized multipart body, possible memory-pressure exploitation attempt',\
+    chain,\
+    tag:'attack-rce',\
+    tag:'cve-2026-109618',\
+    severity:'CRITICAL',\
+    log,\
+    block"
+    SecRule REQUEST_HEADERS:Content-Type "multipart/form-data"

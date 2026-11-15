@@ -3,7 +3,7 @@
 ### Cybersecurity Student | Penetration Tester | Web, Network & IoT Security
 
 📍 Rawalpindi/Islamabad, Pakistan
-🎓 Seeking **[ Summer 2027]** cybersecurity internships
+🎓 Seeking ** Summer 2027** cybersecurity internships
 
 ![Kali Linux](https://img.shields.io/badge/Kali_Linux-557C94?style=flat&logo=kali-linux&logoColor=white)
 ![Burp Suite](https://img.shields.io/badge/Burp_Suite-FF6633?style=flat&logo=burpsuite&logoColor=white)
@@ -25,9 +25,7 @@ I believe that understanding how attacks work is the foundation of building bett
 
 ## 🏆 Achievements
 
-- 🥉 **3rd Place, PKCERT CTF** ([2026]), hosted at CUST. Team of [3]. 
-["I personally worked on network,web security,steganography"]
-
+🥉 **3rd Place, PKCERT CTF (2026)**, hosted at CUST. Team of 3. I worked on the network, web security and steganography challenges.
 ---
 
 ## Skills & Tools
@@ -58,14 +56,19 @@ A set of Layer 2–7 attacks, each paired with a tested mitigation.
 
 
 #### 🔵 Smart Campus SDN Network Redesign — Mininet + Ryu
-**Tools:** Mininet · Ryu (OpenFlow 1.3)
-**Context:** CY3711 Complex Computing Problem, CUST
+**Tools:** Mininet · Open vSwitch · Ryu (OpenFlow 1.3) · Wireshark
+**Context:** CY3711 Complex Computing Problem, CUST (group project of 4)
 
-- Three-tier topology with five VLANs (10–50) and proxy ARP.
-- SDN-based loop prevention that bypasses STP.
-- ACL blocking the Student VLAN from the Admin VLAN.
-- Resolved STP/OpenFlow conflicts by installing static flows on switch_features events.
+Redesigned a flat campus network as a three-tier, VLAN-segmented network controlled by an SDN controller.
+
+- 7 switches and 5 VLANs (10–50). Controller installs static OpenFlow 1.3 flows on each switch at connect time.
+- Proxy ARP for virtual VLAN gateways, plus inter-VLAN routing flows on the distribution switch.
+- ACL drop rule blocking Student VLAN → Admin VLAN. In testing, 18/20 pings passed and the 2 drops were the blocked pair.
+- Loop-free without STP: STP disabled, redundant core path kept silent.
+- **My part:** Mininet topology script and Ryu controller logic.
 - **Key Takeaway:** Segmentation policy can be enforced in the controller, not just on each device.
+
+📁 [Code, report and screenshots](./smart-campus-sdn)
 
 
 
@@ -110,14 +113,19 @@ Conducted an advanced, manual vulnerability assessment against a modern Node.js/
 - **[A04:2021] Insecure Design (Business Logic Bypass):** Intercepted outbound `POST` requests and manipulated JSON payloads in transit to bypass frontend UI validation constraints (e.g., submitting 0-star ratings).
 - **[A05:2021] Security Misconfiguration:** Utilized `gobuster` for aggressive directory enumeration to uncover exposed internal business directories (`/ftp`) and sensitive configuration documents.
 
-#### File Upload to RCE — php2shell-lab
-**Tools:** PHP · [add tools used]
+#### 🛡️ PHP2Shell (CVE-2026-109618 / 109619) — Patch-Verification Lab, Scanner & Detection Rules
+**Tools:** Docker · nginx · PHP-FPM · Python · Suricata · ModSecurity
 
-[Add 2–3 bullets: the vulnerable setup, how the upload filter was bypassed, what access you got.]
+Built within days of the October 21, 2026 disclosure of two critical PHP engine RCE vulnerabilities (CVSS 9.2). Defensive work only, with no exploit code.
 
-- **Key Takeaway:** [your lesson, e.g. validate file type server-side and store uploads outside the web root]
+- Side-by-side Docker lab: vulnerable PHP 8.3.35 vs patched 8.3.36.
+- Python scanner that fingerprints the PHP version and flags exposure against the advisory's patched-version table.
+- Suricata and ModSecurity rules for the publicly described attack surface. The Suricata rule is confirmed firing on a test request.
+- Documented 11-issue troubleshooting log (SELinux bind mounts, Suricata rule parsing).
+- **Key Takeaway:** Bugs in the runtime can't be fixed at the application layer. Patching is the only complete fix, and detection is a stopgap during rollout.
 
 📁 [php2shell-lab](./php2shell-lab)
+
 
 ### 🔌 Hardware & IoT Security
 
@@ -135,7 +143,7 @@ Built a portable wireless security research tool to explore the offensive and de
 
 - Monitors WiFi traffic in promiscuous mode with ISR-safe interrupt handling.
 - Live status shown on an OLED display.
-- [Add: what it detects (e.g. deauth frames) and a photo or screenshot.]
+
 
 #### ESP32 DNS Ad Blocker — Bloom Filter Blocklist
 **Tools:** ESP32 · PlatformIO · LittleFS · Python

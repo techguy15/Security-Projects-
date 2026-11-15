@@ -3,7 +3,8 @@
 ### Cybersecurity Student | Penetration Tester | Web, Network & IoT Security
 
 📍 Rawalpindi/Islamabad, Pakistan
-🎓 Seeking ** Summer 2027** cybersecurity internships
+
+🎓 Seeking **Summer 2027** cybersecurity internships
 
 ![Kali Linux](https://img.shields.io/badge/Kali_Linux-557C94?style=flat&logo=kali-linux&logoColor=white)
 ![Burp Suite](https://img.shields.io/badge/Burp_Suite-FF6633?style=flat&logo=burpsuite&logoColor=white)
@@ -26,13 +27,17 @@ I believe that understanding how attacks work is the foundation of building bett
 ## 🏆 Achievements
 
 🥉 **3rd Place, PKCERT CTF (2026)**, hosted at CUST. Team of 3. I worked on the network, web security and steganography challenges.
+
 ---
 
 ## Skills & Tools
 
 **Penetration Testing:** Web App Security, Network Exploitation, Privilege Escalation, Wireless Security
+
 **Network Security:** ARP/DNS spoofing, DoS and mitigation, DHCP attacks and detection, SDN (Mininet/Ryu), Wireshark analysis
+
 **Environments:** Kali Linux, Docker, VMware, OWASP Juice Shop, DVWA, Metasploitable
+
 **Hardware & IoT:** ESP32, embedded systems security, PlatformIO/Arduino
 
 ---
@@ -43,6 +48,7 @@ I believe that understanding how attacks work is the foundation of building bett
 
 #### 🔴 Network Attacks & Defenses Lab — DoS, DNS, DHCP
 **Tools:** Bettercap · Ettercap · Wireshark · hping3 · slowhttptest · dig · dnsmap · Scapy
+
 **Environment:** Kali + Metasploitable2 on VMware, isolated lab
 
 A set of Layer 2–7 attacks, each paired with a tested mitigation.
@@ -74,6 +80,7 @@ Redesigned a flat campus network as a three-tier, VLAN-segmented network control
 
 #### 🔴 Man-in-the-Middle Attack Analysis — Bettercap
 **Tools:** Bettercap · Kali Linux · Wireshark
+
 **Environment:** Isolated personal test network (Windows + Linux VMs)
 
 Conducted ARP cache poisoning to position as a man-in-the-middle between target VMs and the gateway, demonstrating the full attack chain.
